@@ -1,6 +1,19 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import styles from "../styles/Home.module.css";
+
+import Img1 from "../components/assets/abdurazakov1.jpg";
+import Img2 from "../components/assets/abdurazakov2.jpg";
+import Img3 from "../components/assets/abdurazakov3.jpg";
+import Img4 from "../components/assets/abdurazakov4.jpg";
+import Img5 from "../components/assets/arefeva.jpg";
+import Img6 from "../components/assets/ivchenko1.jpg";
+import Img7 from "../components/assets/ivchenko2.jpg";
+import Img8 from "../components/assets/kudrina1.jpg";
+import Img9 from "../components/assets/kudrina2.jpg";
+import Img10 from "../components/assets/kudrina3.jpg";
+
+const images = [Img1, Img2, Img3, Img4, Img5, Img6, Img7, Img8, Img9, Img10];
 
 export default function Home() {
   return (
@@ -11,45 +24,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+      <main style={{ display: "flex", flexWrap: "wrap" }}>
+        {images.map((img, idx) => (
+          <div key={idx} style={{ width: "100px" }}>
+            <Image src={img} alt="image" />
+          </div>
+        ))}
       </main>
 
       <footer className={styles.footer}>
@@ -58,12 +38,12 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>
     </div>
-  )
+  );
 }
